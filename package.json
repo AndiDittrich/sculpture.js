@@ -1,0 +1,32 @@
+{
+    "name": "sculpture.js",
+    "description": "yet another static website generator",
+    "license": "MPL-2.0",
+    "version": "0.1.0",
+    "author": "Andi Dittrich",
+    "preferGlobal": true,
+    "homepage": "https://github.com/AndiDittrich/sculpture.js",
+    "bugs": "https://github.com/AndiDittrich/sculpture.js/issues",
+    "repository": "AndiDittrich/sculpture.js",
+    "bin": {
+        "sclupture": "./bin/sculpture.js"
+    },
+    "engines": {
+        "node": ">=8"
+    },
+    "scripts": {
+        "test": "eslint lib/**.js; mocha"
+    },
+    "dependencies": {
+        "commander": "^2.15.1",
+        "ejs": "^2.6.1",
+        "fs-magic": "^2.1.1",
+        "logging-facility": "^2.0.1",
+        "moment": "^2.22.2"
+    },
+    "devDependencies": {
+        "eslint": "^4.15.0",
+        "eslint-config-aenondynamics": "^0.2.0",
+        "mocha": "^5.0.0"
+    }
+}
