@@ -16,7 +16,7 @@ $ yarn global add sculpture.js
 
 ## Usage ##
 
-Just run `sclupture update` within your current project directory. All `ejs` file within the `pages/` directory will be rendered and written to `dist/` directory. Thats it!
+Just run `sculpture update` within your current project directory. All `ejs` file within the `pages/` directory will be rendered and written to `dist/` directory. Thats it!
 
 The generator should be invoked as final step **after** any task runners like grunt/gulp have been executed.
 

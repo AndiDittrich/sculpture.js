@@ -2,14 +2,14 @@
     "name": "sculpture.js",
     "description": "yet another static website generator",
     "license": "MPL-2.0",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "Andi Dittrich",
     "preferGlobal": true,
     "homepage": "https://github.com/AndiDittrich/sculpture.js",
     "bugs": "https://github.com/AndiDittrich/sculpture.js/issues",
     "repository": "AndiDittrich/sculpture.js",
     "bin": {
-        "sclupture": "./bin/sculpture.js"
+        "sculpture": "./bin/sculpture.js"
     },
     "engines": {
         "node": ">=8"
