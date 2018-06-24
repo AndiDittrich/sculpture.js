@@ -45,6 +45,9 @@ _cli
     .command('update')
     .description('generate static pages')
     .action(asyncWrapper(async () => {
+        // start time
+        const t0 = Date.now();
+
         // load config within current working dir
         const config = await _config.load(_cwd);
 
@@ -52,8 +55,11 @@ _cli
         _logger.log('generating static pages..');
         await _generator(config, _cwd);
 
+        // stop time
+        const t1 = Date.now();
+
         // msg
-        _logger.log('finished!');
+        _logger.log(`finished in ${Math.ceil((t1-t0)/1000)} seconds`);
     }));
 
 // unknown

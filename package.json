@@ -2,7 +2,7 @@
     "name": "sculpture.js",
     "description": "yet another static website generator",
     "license": "MPL-2.0",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "author": "Andi Dittrich",
     "preferGlobal": true,
     "homepage": "https://github.com/AndiDittrich/sculpture.js",
@@ -15,7 +15,7 @@
         "node": ">=8"
     },
     "scripts": {
-        "test": "eslint lib/**.js; mocha"
+        "test": "eslint lib/**.js;"
     },
     "dependencies": {
         "commander": "^2.15.1",

@@ -1,2 +1,5 @@
-### 1.0.0 ###
-Initial Public Release
+### 0.2.0 ###
+
+* Added: dynamic plugin loader
+* Added: plugin `cryptex` to obfuscate content with unicode
+* Added: plugin `moment` to use `moment.js` within templates

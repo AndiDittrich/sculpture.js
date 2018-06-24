@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AndiDittrich/sculpture.js.svg?branch=master)](https://travis-ci.org/AndiDittrich/sculpture.js)
+
 sculpture.js
 =========================================
 yet another static website generator. Transforms **ejs** based templates to pages
@@ -7,6 +9,7 @@ yet another static website generator. Transforms **ejs** based templates to page
 * Generate full-static websites
 * Parallel processing using ES6 promise/await
 * Templates based on [ejs](http://ejs.co/)
+* Plugin system to inject custom functions into templates
 
 ## Install ##
 
@@ -34,6 +37,10 @@ Each project needs a json based configuration file within the root directory nam
         "/bootstrap.min.css",
         "/about.min.css",
         "/util.min.js"
+    ],
+
+    "plugins": [
+        "resources"
     ]
 }
 ```
@@ -48,21 +55,22 @@ Example:
 <title><%= globals.title %></title>
 ```
 
-**resources**: resource files to be enqueued via `<%- enqueueResources('<extentension>'); %>`
+**plugins**: plugin namespace of registered plugins `<%- plugins.<name>.<export> %>`
 
 Example:
 
 ```html
-<%- enqueueResources('css'); %>
+<%- plugins.resources.enqueue('css'); %>
 </head>
 ```
 
 ### Directory Structure ###
 
-The following structure is **required**
+The following structure is currently **required**
 
 ```
 > project
+  |-- sculpture.json
   |-- dist
   |    |-- libraryA.js
   |    |-- frameworkB.min.css
@@ -73,7 +81,6 @@ The following structure is **required**
   |-- templates
   |    |-- header.ejs
   |    |-- footer.ejs
-  |-- sculpture.json
 ```
 
 ## Example ##
@@ -82,14 +89,17 @@ The following structure is **required**
  $ sculpture update
 [config]      ~ sculpture configuration loaded 
 [sculpture.js]~ generating static pages.. 
-[generator]   ~ generating resource hashes.. 
+[generator]   ~ initializing plugins.. 
+[plugins]     ~ loading plugin [ resources ] 
+[resources]   ~ generating resource hashes.. 
+[plugins]     ~ loading plugin [ moment ] 
+[plugins]     ~ loading plugin [ cryptex ] 
 [generator]   ~ processing 3 pages.. 
 [ejs-renderer]~ rendering page [ contact.ejs ] 
 [ejs-renderer]~ rendering page [ imprint.ejs ] 
 [ejs-renderer]~ rendering page [ privacy-policy.ejs ] 
-[sculpture.js]~ finished! 
+[sculpture.js]~ finished in 2 seconds 
 ```
-
 
 ## License ##
 sculpture.js is OpenSource and licensed under the Terms of [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0) - your're welcome to contribute
